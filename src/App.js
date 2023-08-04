@@ -1,10 +1,11 @@
 import './App.css';
-import Header from './shared/Header/header';
+import ExpenseItem from './components/ExpenseItem';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <h2>Let's get started!</h2>
+      <ExpenseItem />
     </div>
   );
 }
