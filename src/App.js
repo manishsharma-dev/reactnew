@@ -25,15 +25,13 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
-  // return React.createElement(
-  //   "div",
-  //   {},
-  //   React.createElement("h2", {}, "Let's get started!"),
-  //   React.createElement(Expenses, { expenses: expenses })
-  // );
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+    expenses.push(expense);
+  };
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddExpenseHandler={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
