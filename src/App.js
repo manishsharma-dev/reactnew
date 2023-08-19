@@ -10,10 +10,10 @@ function App() {
     });
   };
   return (
-    <div>
+    <React.Fragment>
       <AddUser onFetchUserData={fetchUserData} />
       {userList.length > 0 && <UsersList users={userList} />}
-    </div>
+    </React.Fragment>
   );
 }
 

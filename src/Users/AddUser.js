@@ -3,6 +3,7 @@ import classes from "./AddUser.module.css";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 const AddUser = (props) => {
   const [userInput, setUserInput] = useState(DEFAULT_INPUT_STATE);
@@ -39,7 +40,7 @@ const AddUser = (props) => {
     setDialogContent(DEFAULT_DIALOG_STATE);
   };
   return (
-    <div>
+    <Wrapper>
       {dialogContent.title && (
         <ErrorModal
           title={dialogContent.title}
@@ -72,7 +73,7 @@ const AddUser = (props) => {
           </form>
         </Card>
       )}
-    </div>
+    </Wrapper>
   );
 };
 
