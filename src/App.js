@@ -1,11 +1,9 @@
-import './App.css';
-import Header from './shared/Header/header';
+import Counter from './components/Counter';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Counter />
   );
 }
 
