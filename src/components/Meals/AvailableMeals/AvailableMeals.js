@@ -9,11 +9,11 @@ const AvailableMeals = () => {
   useEffect(() => {
     async function fetchMeals() {
       const response = await fetch(
-        "https://react-http-6c75f-default-rtdb.firebaseio.com/meals.json1"
+        "https://react-http-6c75f-default-rtdb.firebaseio.com/meals.json"
       );
       var data = [];
       const loadedData = [];
-      if (!response.ok === 200) {
+      if (!response.ok) {
         throw new Error("Something went wrong");        
       } 
       data = await response.json();
@@ -24,13 +24,13 @@ const AvailableMeals = () => {
         });
       }
       setMealItem(loadedData);
-    }
-    try {
-      fetchMeals();
-    } catch (err) {
-      setIsLoading(false);
-      setHttpError(err.message);
-    }
+    }   
+      fetchMeals().then((res) => {
+        setIsLoading(false);
+      }).catch((err) => {
+        setIsLoading(false);
+        setHttpError(err.message);
+      });    
   }, []);
 
   if (isLoading) {
